@@ -1,2 +1,2 @@
 #!/bin/bash
-set -o local
+set -o local | set
