@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# server configuration for fetching the hostname
+sudo apt-get -y update
+sudo apt-get -y install nginx
+host_name=$(hostname)
+NGINX_CONF="/etc/nginx/sites-available/default"
+HEADER="add_header X-Served-By $host_name;"
+if ! grep -q "$HEADER" "$NGINX_CONF"; then
+    sudo sed -i "/server {/a \    $HEADER" "$NGINX_CONF"
+fi
+sudo service nginx reload
