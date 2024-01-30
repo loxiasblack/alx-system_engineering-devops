@@ -1,3 +1,4 @@
+# script that creat a custom http response
 class nginx_custom_header {
 
   package { 'nginx':
