@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# HAproxy installation and configuration
 STUDENT_ID="484998"
 sudo apt-get -y update
 sudo apt-get -y install haproxy
