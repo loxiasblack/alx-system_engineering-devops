@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#check the user as first argument
+if [ "$#" -eq 0 ]; then
+    echo "Usage: '$0' <username>"
+elif [ "$#" -eq 1 ]; then
+    sudo -u "$1" whoami
+else
+    echo "to much argument"
+fi
