@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 #let server run nginx user and listen on port 8080
 sudo chmod 644 /etc/nginx/nginx.cong
-sed -i 'user nginx;' /etc/nginx/nginx.conf
+if grep -qE "^user" /etc/nginx/nginx.conf; then
+    echo "Updating the 'user' directive to 'nginx' in nginx.conf..."
+    sudo sed -i "s/^user .*/user nginx;/" /etc/nginx/nginx.conf
+else
+    echo "Adding the 'user nginx;' directive to nginx.conf..."
+    sudo sed -i "1s/^/user nginx;\n/" /etc/nginx/nginx.conf
+fi
 sed -i '/listen[ \t]*80[ \t]*default_server;/a listen 8080 default_server;' /etc/nginx/sites-available/default
 sed -i '/listen[ \t]*\[::\]:80[ \t]*default_server;/a listen [::]:8080 default_server;' /etc/nginx/sites-available/default
 sudo netstat -tulnlp | grep 8080
