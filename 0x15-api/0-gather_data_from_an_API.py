@@ -33,7 +33,7 @@ if __name__ == "__main__":
                     task_done += 1
                     list_of_title.append(item['title'])
 
-    print("Employee {} is done with tasks ({}/{}):".
+    print("Employee {} is done with tasks({}/{}):".
           format(user_name, task_done, number_of_task))
     for item in list_of_title:
         print("\t {}".format(item))
