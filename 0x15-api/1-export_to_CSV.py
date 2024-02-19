@@ -17,11 +17,12 @@ if __name__ == "__main__":
     user_id = sys.argv[1]
 
     user_url = f"https://jsonplaceholder.typicode.com/users/{user_id}"
-    todos_url = f"https://jsonplaceholder.typicode.com/users/{user_id}/todos"
+    todos_url = f'https://jsonplaceholder.typicode.com/todos?userId={user_id}'
 
     user_info = fetch_data(user_url)
     if user_info is not None:
-        user_name = user_info['name']
+        name = user_info['name']
+        user_name = user_info['username']
 
     task_info = fetch_data(todos_url)
     if task_info is not None:
