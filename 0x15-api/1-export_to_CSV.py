@@ -38,7 +38,7 @@ if __name__ == "__main__":
     with open(f'{user_id}.csv', 'w', newline='') as file:
         writer = csv.writer(file, delimiter=",", quoting=csv.QUOTE_ALL)
         for item in task_info:
-            writer.writerow([item['userId'],
+            writer.writerow([user_id,
                              f"{user_name}",
                              item['completed'],
                              item['title']])
