@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#update nginx
 sudo apt-get update
 sudo apt install nginx
 sudo pkill apache2
