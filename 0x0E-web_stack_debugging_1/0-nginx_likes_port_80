@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#install nginx
-apt-get update
-apt-get install nginx -y
-service nginx start
+# Debugging container
+rm -rf /etc/nginx/sites-enabled/*
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/                                  
+service nginx restart
