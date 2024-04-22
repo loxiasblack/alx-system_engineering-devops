@@ -17,8 +17,7 @@ if __name__ == "__main__":
     all_data = {}
     while user_id < 11:
         user_url = f"https://jsonplaceholder.typicode.com/users/{user_id}"
-        todos_url = f"https://jsonplaceholder.typicode.com/ \
-                                users/{user_id}/todos"
+        todos_url = f"https://jsonplaceholder.typicode.com/users/{user_id}/todos"
 
         user_info = fetch_data(user_url)
         if user_info is not None:
