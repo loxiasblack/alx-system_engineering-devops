@@ -1,19 +1,21 @@
 #!/usr/bin/python3
-""" module for function to return number of subreddit subscribers """
+"""get the numb of subs"""
 import requests
-import sys
 
 
 def number_of_subscribers(subreddit):
-    """  Args:
-        subreddit: subreddit name
-    Returns:
-        number of subscribers to the subreddit,
-        or 0 if subreddit requested is invalid"""
-    headers = {'User-Agent': 'xica369'}
+    """my function get"""
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    response = requests.get(url, headers=headers, allow_redirects=False)
+    
+    try:
+        response = requests.get(url, allow_redirects=False)
 
-    if response.status_code == 200:
-        return (response.json().get("data").get("subscribers"))
-    return (0)
+        if response.status_code == 200:
+            data = response.json()
+            return data['data']['subscribers']
+        elif response.status_code == 404:
+            return 0
+        else:
+            return 0
+    except requests.RequestException as e:
+        return 0
