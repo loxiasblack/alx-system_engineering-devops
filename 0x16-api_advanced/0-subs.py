@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""""""
+"""get the numb of subs"""
 import requests
 
 
