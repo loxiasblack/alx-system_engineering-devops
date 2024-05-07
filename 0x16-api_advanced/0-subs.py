@@ -6,8 +6,9 @@ import requests
 def number_of_subscribers(subreddit):
     """my function get"""
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
+    headers = {'User-Agent': 'MyBot/1.0 (by YourUsername)'}
     try:
-        response = requests.get(url, allow_redirects=False)
+        response = requests.get(url, headers=headers, allow_redirects=False)
 
         if response.status_code == 200:
             data = response.json()
