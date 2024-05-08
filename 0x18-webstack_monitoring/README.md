@@ -6,4 +6,10 @@
         <li>keeping</li>
         <li>log-data</li>
 </ul></p>
-
+<p align="left"><h2>-Monitor some metrics</h2>
+<ul>
+    there's the setps for this one's:
+    <li>Go to monitors</li>
+    <li>and create monitor</li>
+</ul></p>
+    
