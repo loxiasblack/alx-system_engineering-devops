@@ -12,4 +12,11 @@
     <li>Go to monitors</li>
     <li>and create monitor</li>
 </ul></p>
-    
+
+<p align="left"><h2>-Create New Dashbord</h2>
+<ul>
+    <li>click on the dashbord<li>
+    <li>and choose the form</li>
+    <li>and save  the dashbord</li>
+    <li>copy the id</li>
+</ul></p>
